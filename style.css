@@ -105,10 +105,12 @@ input {
 
 /* Pin Numbers on Desktop */
 @media screen and (min-width: 1200px) {
+    /* Widen the Gap */
     .pin_num_div {
         gap: 2em;
     }
 
+    /* Expand the size */
     input {
         width: 4em;
         height: 4em;
@@ -120,8 +122,19 @@ button {
     background-color: blue;
     color: white;
     width: 15em;
-    padding: .5em;
+    padding: .7em;
     border: none;
     font-weight: bold;
-    border-radius: 5px;
+    margin-top: 1em;
+    /* border-radius: 5px; */
+}
+
+/* Submit Button on Desktop */
+@media screen and (min-width: 1200px) {
+    /* Expand the size thru padding */
+    button {
+        width: 24.5em;
+        padding: 1em;
+        margin-top: 3em;
+    }
 }
