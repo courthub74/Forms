@@ -1,14 +1,17 @@
+/* GOD */
 * {
     margin: 0;
     padding: 0;
 }
 
+/* EARTH */
 body {
     background-color: black;
     color: white;
     overflow-x: hidden;
 }
 
+/* THE CONTENT */
 main {
     display: flex;
     flex-direction: column;
@@ -20,6 +23,17 @@ main {
     /* Already Centers the Header */
 }
 
+/* HEADER */
+header {
+    display: flex;
+}
+
+/* HEADER TEXT */
+header h1 {
+    font-size: 2.3rem;
+}
+
+/* THE FORM */
 form {
     display: flex;
     flex-direction: column;
@@ -32,13 +46,24 @@ form {
     width: 20%;
 }
 
+label {
+    font-size: 1.1rem;
+}
+
 /* Make Padding on form fatter on desktop */
 @media screen and (min-width: 1200px) {
+    header h1 {
+        font-size: 3rem;
+    }
+    label {
+        font-size: 1.5rem;
+    }
     form {
         padding: 10em;
     }
 }
 
+/* DROPDOWN AND PIN NUMBERS DIV*/
 .input_div {
     display: flex;
     flex-direction: column;
@@ -46,6 +71,7 @@ form {
     /* width: 100%; */
 }
 
+/* NAME GROP DOWN MENU */
 select {
    width: 15em;
    padding: .5em;
@@ -54,19 +80,22 @@ select {
    color: white;
 }
 
+/* Select Button on Desktop */
 @media screen and (min-width: 1200px) {
     select {
-        width: 30em;
+        width: 25em;
         padding: 1em;
         background-color: blue;
     }
 }
 
+/* PIN NUM DIV */
 .pin_num_div {
     display: flex;
     gap: .5em;
 }
 
+/* EACH PIN NUMBER */
 input {
     width: 3em;
     height: 3em;
@@ -74,6 +103,19 @@ input {
     border: 2px solid blue;
 }
 
+/* Pin Numbers on Desktop */
+@media screen and (min-width: 1200px) {
+    .pin_num_div {
+        gap: 2em;
+    }
+
+    input {
+        width: 4em;
+        height: 4em;
+    }
+}
+
+/* SUBMIT BUTTON */
 button {
     background-color: blue;
     color: white;
