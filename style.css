@@ -1,3 +1,34 @@
+/* Import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noticia+Text&family=Playfair+Display&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:wght@500;700;900&family=Satisfy&family=Shadows+Into+Light&family=Shadows+Into+Light+Two&display=swap');
+
+:root {
+
+    /* Base */
+    --background-color: #ffffff;
+    --text-color: #000000;
+
+    /* Menu Colors */
+    --menu-background: #f5f5f5;
+    --menu-hover: #e0e0e0;
+    --menu-shadow: rgba(0, 0, 0, 0.1);
+
+     /* App State Colors */
+     --app-state-background: #74AEDC;
+     --app-state-trim: #000000;
+
+     /* Form Colors */
+     --form-background: #74AEDC;
+     --form-trim: #000000;
+
+     /* Input Colors */
+     --input-background: #D9D9D9;
+     --input-trim: #000000; 
+
+     /* Button Colors */
+     --button-background: #000000;
+     --button-text: white;
+}
+
 /* GOD */
 * {
     margin: 0;
@@ -6,9 +37,10 @@
 
 /* EARTH */
 body {
-    background-color: black;
-    color: white;
+    background-color: var(--background-color);
+    color: var(--text-color);
     overflow-x: hidden;
+    font-family: 'Poppins';
 }
 
 /* THE CONTENT */
@@ -23,14 +55,36 @@ main {
     /* Already Centers the Header */
 }
 
-/* HEADER */
+/* HEADER DIV */
 header {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5em;
+}
+
+/* LOGO NAME */
+.logo_name {
+    display: flex;
+    align-items: center;
+    gap: .5em;
 }
 
 /* HEADER TEXT */
 header h1 {
     font-size: 2.3rem;
+}
+
+/* HEADER LOGO */
+img {
+    width: 3.5em;
+    height: 3.5em;
+}
+
+/* APP STATE */
+.app_state {
+    background-color: blue;
+    padding: .3em 2em;
 }
 
 /* THE FORM */
@@ -54,6 +108,10 @@ label {
 @media screen and (min-width: 1200px) {
     header h1 {
         font-size: 3rem;
+    }
+    img {
+        width: 5em;
+        height: 5em;
     }
     label {
         font-size: 1.5rem;
