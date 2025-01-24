@@ -83,9 +83,14 @@ img {
 
 /* APP STATE */
 .app_state {
-    background-color: blue;
-    padding: .3em 2em;
+    background-color: var(--app-state-background);
+    border: 2px solid var(--app-state-trim);
+    color: var(--text-color);
+    padding: .3em 3em;
+    border-radius: 5px;
 }
+
+
 
 /* THE FORM */
 form {
@@ -93,33 +98,24 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px solid blue;
+    background-color: var(--app-state-background);
+    border: 2px solid var(--app-state-trim);
     border-radius: 5px;
     gap: 2em;
     padding: 5em;
-    width: 20%;
+    width: 35%;
 }
 
 label {
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
-/* Make Padding on form fatter on desktop */
-@media screen and (min-width: 1200px) {
-    header h1 {
-        font-size: 3rem;
-    }
-    img {
-        width: 5em;
-        height: 5em;
-    }
-    label {
-        font-size: 1.5rem;
-    }
-    form {
-        padding: 10em;
-    }
+.create_acct {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
 }
+
 
 /* DROPDOWN AND PIN NUMBERS DIV*/
 .input_div {
@@ -133,19 +129,18 @@ label {
 select {
    width: 15em;
    padding: .5em;
-   background-color: blue;
-   border: none;
-   color: white;
+   background-color: var(--input-background);
+   border: 2px solid var(--input-trim);
+   border-radius: 5px;
+   color: var(--text-color)
 }
 
-/* Select Button on Desktop */
-@media screen and (min-width: 1200px) {
-    select {
-        width: 25em;
-        padding: 1em;
-        background-color: blue;
-    }
+select option {
+    color: var(--text-color);
+    border: 1px solid var(--input-trim);
+    background-color: var(--input-background);
 }
+
 
 /* PIN NUM DIV */
 .pin_num_div {
@@ -157,27 +152,15 @@ select {
 input {
     width: 3em;
     height: 3em;
-    background-color: black;
-    border: 2px solid blue;
-}
-
-/* Pin Numbers on Desktop */
-@media screen and (min-width: 1200px) {
-    /* Widen the Gap */
-    .pin_num_div {
-        gap: 2em;
-    }
-
-    /* Expand the size */
-    input {
-        width: 4em;
-        height: 4em;
-    }
+    background-color: var(--input-background);
+    border: 2px solid var(--input-trim);
+    border-radius: 5px;
+    text-align: center;
 }
 
 /* SUBMIT BUTTON */
 button {
-    background-color: blue;
+    background-color: var(--button-background);
     color: white;
     width: 15em;
     padding: .7em;
@@ -187,12 +170,90 @@ button {
     /* border-radius: 5px; */
 }
 
-/* Submit Button on Desktop */
+/* CREATE AN ACCOUNT */
+.create_acct_div {
+    /* background-color: blue; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create_acct {
+    font-size: .8rem;
+    width: 50em;
+    text-align: center;
+}
+
+/* Desktop */
 @media screen and (min-width: 1200px) {
-    /* Expand the size thru padding */
+    header h1 {
+        font-size: 3rem;
+    }
+    img {
+        width: 5em;
+        height: 5em;
+    }
+    label {
+        font-size: 1.2rem;
+    }
+    form {
+        padding: 7em;
+    }
+    .app_state {
+        padding: .5em 4em;
+        font-size: 1.2rem;
+    }
+    .create_acct {
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: bold;
+        text-align: center;
+    }
+
+    /* Widen the Gap */
+    .pin_num_div {
+        gap: 2em;
+    }
+
+    /* Expand the size */
+    input {
+        width: 4em;
+        height: 4em;
+        border-radius: 5px;
+    }
+
+    select {
+        width: 25em;
+        padding: 1em;
+        background-color: var(--input-background);
+        border: 2px solid var(--input-trim);
+        border-radius: 5px;
+        color: var(--text-color);
+    }
+
+    select option {
+        color: var(--text-color);
+    }
+
     button {
         width: 24.5em;
         padding: 1em;
-        margin-top: 3em;
+        margin-top: 2em;
+        border-radius: 5px;
+    }
+
+    .create_acct_div {
+        /* background-color: blue; */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .create_acct {
+        font-size: 1rem;
+        width: 50em;
+        text-align: center;
     }
 }
