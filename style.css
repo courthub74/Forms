@@ -29,25 +29,200 @@
      --button-text: white;
 }
 
-/* GOD */
-* {
-    margin: 0;
-    padding: 0;
+/* DARK MODE */
+
+body.dark-mode {
+
+    /* Base */
+    --background-color: black;
+    --text-color: #ffffff;
+
+    /* Menu Colors */
+    --menu-background: #101010;
+    --menu-hover: #0d0d0d;
+    --menu-shadow: rgb(22, 33, 38);
+
+     /* App State Colors */
+     --app-state-background: #000000;
+     --app-state-trim: #74AEDC;
+
+     /* Form Colors */
+     --form-background: #000000;
+     --form-trim: #74AEDC;
+
+     /* Input Colors */
+     --input-background: #000000;
+     --input-trim: #74AEDC;
+     
+     /* Button Colors */
+     --button-background: #74AEDC;
+     --button-text: white;
 }
+
 
 /* EARTH */
 body {
+    margin: 0;
+    padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
     overflow-x: hidden;
     font-family: 'Poppins';
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* THE CONTENT */
+/* NAVBAR */
+.main_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--background-color);
+
+    /* Puts Box shadow on the bottom */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px var(--menu-shadow);
+    position: relative;
+    z-index: 1000;
+}
+
+/* The Whole Button (Menu Burger) */
+.burger_div button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+/* The stacked logos (menu button) */
+.burger {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Order for the Menu button logos */
+
+/* Make the dark mode menu go away */
+#menu_button .menu_burgers .burger:last-child {
+    display: none;
+}
+
+/* Make the lite mode menu come on in dark mode */
+.dark-mode #menu_button .menu_burgers .burger:first-child {
+    display: none;
+}
+
+/* Make the last child visible in darkmode */
+.dark-mode #menu_button .menu_burgers .burger:last-child {
+    display: block;
+}
+
+/* When Burger button (or burger class) is active */
+.burger.active {
+    transform: rotate(90deg);
+}
+
+.theme_switch {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    /* background-color: blue; */
+}
+
+/* The Whole Button (day nite) */
+#day_nite_logos {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    background: none;
+}
+
+/* The stacked logos (day nite) */
+.day-nite {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s ease;
+}
+
+/* Order for the Dark Lite Mode Logos */
+body.dark-mode .day-nite:nth-child(2) {
+    opacity: 0;
+}
+
+body:not(.dark-mode) .day-nite:nth-child(1) {
+    opacity: 0;
+}
+
+/* Slide-out Menu Styles */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: var(--menu-background);
+    transition: transform 0.3s ease-in-out;
+    padding-top: 80px;
+    z-index: 999;
+}
+
+.side-menu.active {
+    transform: translateX(300px);
+}
+
+/* THE SLIDE MENU  */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 998;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-item {
+    padding: 1rem 2rem;
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.menu-item:hover {
+    background-color: var(--menu-hover);
+}
+
+/* For demonstrating menu items */
+.menu-item span {
+    margin-left: 10px;
+}
+
+
+/* THE MAIN CONTENT */
 main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     gap: 2em;
     height: 100vh;
@@ -60,7 +235,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: .5em;
+    /* gap: .5em; */
 }
 
 /* LOGO NAME */
@@ -132,7 +307,16 @@ select {
    background-color: var(--input-background);
    border: 2px solid var(--input-trim);
    border-radius: 5px;
-   color: var(--text-color)
+   color: var(--text-color);
+
+   /* Responsive width */
+   width: 100%;
+   max-width: 300px; /* Maximum width */
+   min-width: 200px; /* Minimum width */
+
+   /* Mobile-friendly sizing */
+   height: 44px; /* Minimum touch target size */
+   padding: 10px 15px;
 }
 
 select option {
@@ -213,18 +397,18 @@ button {
 
     /* Widen the Gap */
     .pin_num_div {
-        gap: 2em;
+        gap: 1.3em;
     }
 
     /* Expand the size */
     input {
         width: 4em;
-        height: 4em;
+        height: 3.5em;
         border-radius: 5px;
     }
 
     select {
-        width: 25em;
+        width: 75em;
         padding: 1em;
         background-color: var(--input-background);
         border: 2px solid var(--input-trim);
