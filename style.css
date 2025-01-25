@@ -224,7 +224,7 @@ main {
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
-    gap: 2em;
+    gap: 1em;
     height: 100vh;
     width: 100%;
     /* Already Centers the Header */
@@ -235,7 +235,8 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* gap: .5em; */
+    /* background-color: red; */
+    margin-top: 1.5em;
 }
 
 /* LOGO NAME */
@@ -243,6 +244,8 @@ header {
     display: flex;
     align-items: center;
     gap: .5em;
+    /* background-color: blue; */
+    margin-bottom: -2em;
 }
 
 /* HEADER TEXT */
@@ -302,7 +305,7 @@ label {
 
 /* NAME GROP DOWN MENU */
 select {
-   width: 15em;
+   width: 18em;
    padding: .5em;
    background-color: var(--input-background);
    border: 2px solid var(--input-trim);
@@ -310,9 +313,9 @@ select {
    color: var(--text-color);
 
    /* Responsive width */
-   width: 100%;
-   max-width: 300px; /* Maximum width */
-   min-width: 200px; /* Minimum width */
+   /* width: 100%; */
+   /* max-width: 800px; 
+   min-width: 200px;  */
 
    /* Mobile-friendly sizing */
    height: 44px; /* Minimum touch target size */
@@ -334,7 +337,7 @@ select option {
 
 /* EACH PIN NUMBER */
 input {
-    width: 3em;
+    width: 3.4em;
     height: 3em;
     background-color: var(--input-background);
     border: 2px solid var(--input-trim);
@@ -346,12 +349,13 @@ input {
 button {
     background-color: var(--button-background);
     color: white;
-    width: 15em;
+    width: 18em;
     padding: .7em;
     border: none;
     font-weight: bold;
     margin-top: 1em;
-    /* border-radius: 5px; */
+    border-radius: 5px;
+    font-family: 'Poppins';
 }
 
 /* CREATE AN ACCOUNT */
