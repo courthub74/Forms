@@ -143,6 +143,7 @@ body {
     width: 35px;
     height: 35px;
     background: none;
+    cursor: pointer;
 }
 
 /* The stacked logos (day nite) */
@@ -173,7 +174,7 @@ body:not(.dark-mode) .day-nite:nth-child(1) {
     height: 100vh;
     background-color: var(--menu-background);
     transition: transform 0.3s ease-in-out;
-    padding-top: 80px;
+    padding-top: 150px;
     z-index: 999;
 }
 
@@ -319,7 +320,7 @@ select {
 
    /* Mobile-friendly sizing */
    height: 44px; /* Minimum touch target size */
-   padding: 10px 15px;
+   padding: 10px 20px;
 }
 
 select option {
@@ -378,6 +379,12 @@ button {
     header h1 {
         font-size: 3rem;
     }
+    .side-menu {
+        padding-top: 200px;
+    }
+    #day_nite_logos {
+        cursor: pointer;
+    }
     img {
         width: 5em;
         height: 5em;
@@ -386,7 +393,7 @@ button {
         font-size: 1.2rem;
     }
     form {
-        padding: 7em;
+        padding: 4em;
     }
     .app_state {
         padding: .5em 4em;
@@ -401,7 +408,7 @@ button {
 
     /* Widen the Gap */
     .pin_num_div {
-        gap: 1.3em;
+        gap: 1.8em;
     }
 
     /* Expand the size */
@@ -412,16 +419,19 @@ button {
     }
 
     select {
-        width: 75em;
-        padding: 1em;
+        width: 25em;
+        padding: 1.5em;
         background-color: var(--input-background);
         border: 2px solid var(--input-trim);
         border-radius: 5px;
         color: var(--text-color);
+        /* font-size: 1rem; */
+        padding: 1em;
     }
 
     select option {
         color: var(--text-color);
+        font-size: 1rem;
     }
 
     button {
